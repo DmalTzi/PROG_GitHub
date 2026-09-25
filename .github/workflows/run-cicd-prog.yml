@@ -4,7 +4,6 @@ on:
  push:
 
 jobs:
-
  PROG-RUN-PYTHON:
   runs-on: ubuntu-latest
 
