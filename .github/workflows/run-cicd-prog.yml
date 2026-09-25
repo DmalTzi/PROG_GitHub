@@ -1,20 +1,19 @@
 name: PROG CI/CD
 
 on:
- push:
+  push:
 
 jobs:
- PROG-RUN-PYTHON:
-  runs-on: ubuntu-latest
+  PROG-RUN-PYTHON:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
 
-  steps:
-   - name: Download repository
-    uses: actions/checkout@v6
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
-   - name: Set up Python
-    uses: actions/setup-python@v5
-    with:
-     python-version: "3.12"
-
-   - name: Run program
-    run: python3 67050122.py
+      - name: Run program
+        run: echo "CI User" | python3 67050122.py
